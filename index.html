@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muzeu Kombëtar i Kosovës - Avancuar</title>
+    <style>
+        /* Resetim bazë */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .hero .btn:hover {
+            background: #003d80;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #0056b3;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ffcc00;
+        }
+
+        /* About Section */
+        .about {
+            background: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .about img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+
+        /* Exhibits Section */
+        .exhibits {
+            background: #f4f4f4;
+            padding: 4rem 2rem;
+        }
+
+        .exhibits h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .gallery-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-item p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Tickets Section */
+        .tickets {
+            background: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .tickets h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .tickets form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .tickets form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .tickets form input,
+        .tickets form select,
+        .tickets form button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .tickets form button {
+            background: #0056b3;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .tickets form button:hover {
+            background: #003d80;
+        }
+
+        /* Footer Section */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer h2 {
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .footer .social {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .hero {
+            background: url('images/hero-bg-dark.jpg') no-repeat center center/cover;
+        }
+
+        .dark-mode .navbar {
+            background: #333;
+        }
+
+        .dark-mode .footer {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div>
+            <h1>Muzeu Kombëtar i Kosovës</h1>
+            <p>Zbuloni thesaret kulturore dhe historinë e Kosovës.</p>
+            <a href="#rreth" class="btn">Mëso më shumë</a>
+            <button class="btn theme-toggle">Ndrysho Ngjyren</button>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#rreth">Rreth Nesh</a></li>
+            <li><a href="#ekspozitat">Ekspozitat</a></li>
+            <li><a href="#bileta">Bileta</a></li>
+            <li><a href="#kontakti">Kontakti</a></li>
+        </ul>
+    </nav>
+
+    <section id="rreth" class="about">
+        <h2>Rreth Muzeut</h2>
+        <p>Muzeu Kombëtar i Kosovës është një institucion që ruan dhe promovon trashëgiminë kulturore të vendit. Muzeu shërben si një qendër e rëndësishme për edukimin dhe studimin e historisë sonë. Ndërtesa e muzeut daton që nga periudha e hershme dhe përfaqëson një nga monumentet më të rëndësishme kulturore të Kosovës.</p>
+        <img src="jasht.jpg" alt="Pamje e muzeut">
+        <p>Me ekspozita të pasura dhe ngjarje të veçanta, muzeu mirëpret vizitorë nga e gjithë bota për të zbuluar të kaluarën dhe për të reflektuar mbi të ardhmen.</p>
+    </section>
+
+    <section id="ekspozitat" class="exhibits">
+        <h2>Ekspozitat</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="artefaktet.jpg" alt="Ekspozita 1">
+                <h3>Artefaktet Historike</h3>
+                <p>Zbuloni artefakte nga periudha të ndryshme, duke përfshirë epokat ilire, romake dhe osmane.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="tradita dhe kultura.jpg" alt="Ekspozita 2">
+                <h3>Tradita dhe Kultura</h3>
+                <p>Njihuni me traditat autoktone dhe zakonet që janë trashëguar ndër breza.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="arte bashkohore.jpg" alt="Ekspozita 3">
+                <h3>Arte Bashkëkohore</h3>
+                <p>Eksploroni ekspozitat bashkëkohore që reflektojnë mbi shoqërinë moderne.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="statuja.jpg" alt="Ekspozita 4">
+                <h3>Piktura dhe Skulptura</h3>
+                <p>Koleksion unik i pikturave dhe skulpturave nga artistë të njohur vendas dhe ndërkombëtarë.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="bileta" class="tickets">
+        <h2>Bli Bileta</h2>
+        <form>
+            <label for="name">Emri dhe Mbiemri:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="ticket-type">Lloji i Biletës:</label>
+            <select id="ticket-type" name="ticket-type" required>
+                <option value="adult">Të rritur (5€)</option>
+                <option value="student">Student (3€)</option>
+                <option value="child">Fëmijë (2€)</option>
+            </select>
+
+            <label for="quantity">Sasia:</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" required>
+
+            <button type="submit">Bli Biletë</button>
+        </form>
+    </section>
+
+    <footer id="kontakti" class="footer">
+        <h2>Kontakti</h2>
+        <p>Adresa: Prishtinë, Kosovë</p>
+        <p>Telefoni: +383 38 123 456</p>
+        <p>Email: info@muzeukombetar.ks</p>
+        <ul class="social">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        document.querySelector('.theme-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
+</body>
+</html>
